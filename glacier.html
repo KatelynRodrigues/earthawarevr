@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="icon" href="img/images/EarthAwareLogo.png" type="image/gif" sizes="16x16">
+        <script src = "https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <link rel="stylesheet" href="assets/css/trashisland.css">
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <left id="header" style = "font-family:'FontAwesome'">EXPLORE LIFE WHERE YOUR HOME HAS MELTED AWAY!
+        <button align="center" id="button" onclick="myFunction()" style = "font-family:'FontAwesome'"> Click Here to Start the Quiz!</button>
+        </div>
+        <a-scene id="trashIslandVr">
+            
+            
+             <a-image src="img/images/riverthing.png" height="100px" width="100px" position="-60 10 -15" rotation="-40 40 70" scale visible material geometry>
+                <!--<a-animation attribute="rotation" from="40 70 -40" to="40 360 -40" dur="95000" repeat="indefinite" easing="linear"></a-animation>-->
+            </a-image>
+            <a-assets>
+                <img src = "img/images/pretty.jpg" id = "360photo">
+            </a-assets>
+            <a-sky src = "#360photo"></a-sky>
+            <a-entity camera look-controls position = "0 1.6 0">
+            <!--add the camera-->
+            <a-cursor color="white"></a-cursor>
+            </a-entity>
+            <!--add events: click, fusing, mousedown,mouseenter, mouseleave, mouseup-->
+            <!--make a box disappear when you click on it-->
+            <!--<a-box color="red" position="2 1 -4">-->
+            <!--	<a-animation attribute = "visible" to = "false" begin="click"></a-animation>-->
+            <!--</a-box>-->
+        </a-scene>
+        
+        
+        
+        <div id="quiz" style="display:none">
+            <h1 id="title">How Much Do You Know? The Scary Truth About Earth's Glaciers</h1>
+            <table style="width:100%">
+                
+              <tr>
+            <th><form class="trashIslandQuiz">
+            Question 1: Why are glaciers melting bad?<br>
+              <input type="radio" name="question1" value="0"> Oceans warm and expand in volume<br>
+              <input type="radio" name="question1" value="0"> Leads to disastrous extreme weather<br>
+              <input type="radio" name="question1" value="0"> Saltwater permeates into fresh drinking water<br>
+              <input type="radio" name="question1" value="10"> All of the above
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 2: During the Ice Age, glaciers covered 1/3 of the earth's surface. What percent of the Earth do they cover now?<br>
+              <input type="radio" name="question2" value="10"> 10%<br>
+              <input type="radio" name="question2" value="0"> 20%<br>
+              <input type="radio" name="question2" value="0"> 30%<br>
+              <input type="radio" name="question2" value="0"> 40%
+            </th>
+
+            <br><br><br>
+            
+            <th>
+            Question 3: How much of the world's freshwater do glaciers store?<br>
+              <input type="radio" name="question3" value="0">60%<br>
+              <input type="radio" name="question3" value="0">65%<br>
+              <input type="radio" name="question3" value="0">70%<br>
+              <input type="radio" name="question3" value="10"> 75%
+             </th>
+             
+             <br><br><br>
+             
+            <th>
+            Question 4: How many countries have glaciers?<br>
+              <input type="radio" name="question4" value="0"> 39<br>
+              <input type="radio" name="question4" value="0"> 45<br>
+              <input type="radio" name="question4" value="10"> 47<br>
+              <input type="radio" name="question4" value="0"> 52
+             </th>
+            </tr>
+            
+            <br><br><br>
+            
+            <tr><th>
+                
+            Question 5: How does this phenomenon hurt the economy?<br>
+              <input type="radio" name="question5" value="0"> Farmers can't raise crops<br>
+              <input type="radio" name="question5" value="0"> Ocean sustains all planet life<br>
+              <input type="radio" name="question5" value="0"> Oceans control planet temperature<br>
+              <input type="radio" name="question5" value="10"> All of the above
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 6: How much are the economic costs of flooding going to cost in 2030?<br>
+              <input type="radio" name="question6" value="0">$440 billion<br>
+              <input type="radio" name="question6" value="10"> $443 billion<br>
+              <input type="radio" name="question6" value="0"> $450 billion<br>
+              <input type="radio" name="question6" value="0"> $455 billion
+            </th>
+            
+            <br><br><br>
+            
+            <th>
+            Question 7: When all glaciers melt, how much will sea level rise to?<br>
+              <input type="radio" name="question7" value="0">60 meters<br>
+              <input type="radio" name="question7" value="10"> 70 meters<br>
+              <input type="radio" name="question7" value="0"> 80 meters<br>
+              <input type="radio" name="question7" value="0">90 meters
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 8: Currently, how many glaciers are melting worldwide?<br>
+              <input type="radio" name="question8" value="0">70%<br>
+              <input type="radio" name="question8" value="0">80%<br>
+              <input type="radio" name="question8" value="10">90%<br>
+              <input type="radio" name="question8" value="0"> 100%
+            </form></th> </tr>
+        </table>
+        <input id="wrapper" type="submit" onclick="showResults()">
+        </div>
+        
+        
+        
+        <div id="results" style="display:none; background-color: rgb(168, 175, 171);">
+        </div>
+        <div id="answers" style="display:none; background-color: rgb(168, 175, 171);">
+            Answers: D | A | D | C | D | B | B | C
+        </div>
+       
+        
+        <div id="facts" style="display:none">
+            <img style="height: 370px; width: 100%;" src="https://media.giphy.com/media/nl3XFL8eMnlUk/giphy.gif">
+        </div>
+        
+        <script>
+            
+function myFunction() {
+    document.getElementById("trashIslandVr").style.display = "none"
+    document.getElementById("button").style.display="none"
+    document.getElementById("header").style.display="none"
+    document.getElementById("quiz").style.display = "block"}
+
+
+function showResults(){
+    document.getElementById("trashIslandQuiz")
+    var question1answer = parseInt(document.querySelector('input[name = "question1"]:checked').value)
+    var question2answer = parseInt(document.querySelector('input[name = "question2"]:checked').value)
+    var question3answer = parseInt(document.querySelector('input[name = "question3"]:checked').value)
+    var question4answer = parseInt(document.querySelector('input[name = "question4"]:checked').value)
+    var question5answer = parseInt(document.querySelector('input[name = "question5"]:checked').value)
+    var question6answer = parseInt(document.querySelector('input[name = "question6"]:checked').value)
+    var question7answer = parseInt(document.querySelector('input[name = "question7"]:checked').value)
+	var question8answer = parseInt(document.querySelector('input[name = "question8"]:checked').value)  
+	
+	var answer = question1answer + question2answer + question3answer + question4answer + question5answer + question6answer + question7answer + question8answer
+    answer = Math.round(answer)
+    
+    document.getElementById("results").style.display="block"
+
+    if (answer === 80){
+      document.getElementById("results").innerHTML = "Congratulations!! You scored a 100%! You made are now an educated environmental steward! Keep taking care of our earth!"
+      document.getElementById("facts").style.display="block"
+    }
+    else {
+        document.getElementById("results").innerHTML = "You scored a "+ answer + "%! Keep trying to become a better environmental steward!!"
+        document.getElementById("answers").style.display = "block" 
+        document.getElementById("facts").style.display="block"
+        
+    }
+}
+
+
+        </script>
+    </body>
+</html>

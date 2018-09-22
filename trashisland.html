@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="icon" href="img/images/EarthAwareLogo.png" type="image/gif" sizes="16x16">
+        <script src = "https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <link rel="stylesheet" href="assets/css/trashisland.css">
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <left id="header" style = "font-family:'FontAwesome'">EXPLORE LIFE AS A MARINE CREATURE IN THE PACIFIC GARBAGE PATCH!
+        <button align="center" id="button" onclick="myFunction()" style = "font-family:'FontAwesome'"> Click Here to Start the Quiz!</button>
+        </div>
+        <a-scene id="trashIslandVr">
+            <!--lays packet-->
+            <a-image src="img/images/lays-classic.png" height="0.2px" width="0.2px" position="0 1 0" rotation="68 56 104" scale visible material geometry></a-image>
+            <a-image src="img/images/lays-classic.png" height="0.2px" width="0.2px" position="1 2 2" rotation="68 56 104" scale visible material geometry></a-image>
+            <a-image src="img/images/lays-classic.png" height="0.2px" width="0.2px" position="0 2 0" rotation="68 56 104" scale visible material geometry></a-image>
+            <a-image src="img/images/lays-classic.png" height="0.2px" width="0.2px" position="-1 1 3 " rotation="68 56 104" scale visible material geometry></a-image>
+            
+            <a-image src="img/images/plastic_bag.png" position="1 1 1" rotation="68 56 104" scale visible material geometry>
+                <a-animation attribute="rotation" from="-50 3.5 -50" to="-50 360 -50" dur="10000" repeat="indefinite" easing="linear">
+                </a-animation>
+            </a-image>
+            
+            <a-image src="img/images/plastic_bag.png" position="-5 3.0 -5" rotation="70 105 0" scale visible material geometry>
+                <a-animation attribute="rotation" from="-5 3.0 -5" to="-5 360 -5" dur="20000" repeat="indefinite" easing="linear">
+                </a-animation>
+            </a-image>
+
+            <a-image src="img/images/plastic_bag.png" position="1 2 -6" rotation="75 105 106" scale visible material geometry>
+                <a-animation attribute="rotation" from="1 2 -6" to="1 360 -6" dur="30000" repeat="indefinite" easing="linear">
+                </a-animation>
+            </a-image>
+            
+            <a-image src="img/images/plastic_bag.png" position="1 4 -10" rotation="75 105 106" scale visible material geometry>
+                <a-animation attribute="rotation" from="1 5 -6" to="1 360 -10" dur="30000" repeat="indefinite" easing="linear">
+                </a-animation>
+            </a-image>
+            
+            <a-image src="img/images/plastic_bag.png" position="6 -3 -6" rotation="75 105 106" scale visible material geometry>
+                <a-animation attribute="rotation" from="6 -3 -6" to="1 360 -6" dur="30000" repeat="indefinite" easing="linear">
+                </a-animation>
+            </a-image>
+            
+            
+            <a-assets>
+                <img src = "img/images/sting.jpg" id = "360photo">
+                <!--BOTTLES-->
+                <a-asset-item id="bottle" src="img/images/Bottle A.obj"></a-asset-item>
+                <a-asset-item id="bottleMaterial" src="img/images/Bottle A.mtl"></a-asset-item>
+                
+                <!--PLASTIC BAGS-->
+                <a-asset-item id="plasticBag" src="img/images/PlasticBag.Obj"></a-asset-item>
+                <a-asset-item id="plasticBagMaterial" src="img/images/PlasticBag.mtl"></a-asset-item>
+                
+                
+            </a-assets>
+            <a-sky src = "#360photo"></a-sky>
+            
+            
+            <a-entity camera look-controls position = "0 1.6 0">
+            <!--add the camera-->
+            <a-cursor color="white"></a-cursor>
+            </a-entity>
+            <!--add events: click, fusing, mousedown,mouseenter, mouseleave, mouseup-->
+            <!--make a box disappear when you click on it-->
+            <a-box color="red" position="200 30 30">
+            	<a-animation attribute = "visible" to = "false" begin="click"></a-animation>
+            </a-box>
+            
+            
+            <!--PLASTIC BOTTLES-->
+            <a-entity position="-50 3.5 -50" rotation="70 105 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 3.5 -50" to="-50 360 -50" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-40 8.1 -50" rotation="10 8.1 -7" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-40 8.1 -50" to="-40 360 -50" dur="15000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-30 4.019 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 4.019 -50" to="-30 360 -50" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-75 4.019 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-70 4.019 -50" to="-70 360 -50" dur="25000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="75 4.019 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="75 4.019 -50" to="75 360 -50" dur="30000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="100 15 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 15 -50" to="30 360 -50" dur="35000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-20 90 -50" rotation="45 115 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-20 30 -50" to="-20 360 -50" dur="40000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-10 49 -50" rotation="60 30 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-10 3 -50" to="-10 360 -50" dur="45000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="0 120 -50" rotation="15 30 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="0 3 -50" to="0 360 -50" dur="50000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="10 3 -50" rotation="45 50 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="10 3 -50" to="10 360 -50" dur="55000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="20 10 -50" rotation="70 105 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="20 10 -50" to="20 360 -50" dur="60000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 -2 -50" rotation="90 145 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 -2 -50" to="30 360 -50" dur="65000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-1 3 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-1 3 -40" to="-1 360 -40" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 50 -40" to="50 360 -40" dur="75000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="200 30 30" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 50 -40" to="-50 360 -40" dur="80000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 -30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 -30 -40" to="50 360 -40" dur="85000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-50 -30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 -30 -40" to="-50 360 -40" dur="90000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="40 70 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="40 70 -40" to="40 360 -40" dur="95000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="40 50 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 30 -40" to="30 360 -40" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-600 30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 30 -40" to="-30 360 -40" dur="15000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 -100 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 -20 -40" to="30 360 -40" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-30 -200 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 -20 -40" to="-30 360 -40" dur="25000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 4 -155" rotation="50 16 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 4 -50" to="50 360 -50" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="51 135 -54" rotation="30 -18 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="51 13 -54" to="51 360 -54" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="69 -155 -54" rotation="30 -18 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="51 13 -54" to="51 360 -54" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-25 14 -46" rotation="-30 243 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-25 14 -46" to="-25 360 -46" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <a-entity position="14 5 -20" rotation="0 0 1" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="14 14 -20" to="-25 360 -46" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <a-entity position="10 -2 10" rotation="36 7 1" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="10 -2 10" to="-25 360 -46" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <a-entity position="20 6 0" rotation="20 0 1" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="20 6 0" to="-25 360 -46" dur="30000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <a-entity position="-30 9 0" rotation="4 5 6 " obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 9 0" to="-25 360 -46" dur="40000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <a-entity position="200 8.1 -50" rotation="10 8.1 -7" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-40 8.1 -50" to="-40 360 -50" dur="15000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="300 4.019 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 4.019 -50" to="-30 360 -50" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="500 -200 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-70 4.019 -50" to="-70 360 -50" dur="25000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="600 56 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="75 4.019 -50" to="75 360 -50" dur="30000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="220 15 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 15 -50" to="30 360 -50" dur="35000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="130 30 -50" rotation="45 115 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-20 30 -50" to="-20 360 -50" dur="40000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-55 345 -50" rotation="60 30 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-10 3 -50" to="-10 360 -50" dur="45000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="0 390 -50" rotation="15 30 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="0 3 -50" to="0 360 -50" dur="50000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="10 3 -50" rotation="45 50 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="10 3 -50" to="10 360 -50" dur="55000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="20 10 -50" rotation="70 105 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="20 10 -50" to="20 360 -50" dur="60000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 -2 -50" rotation="90 145 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 -2 -50" to="30 360 -50" dur="65000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-1 3 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-1 3 -40" to="-1 360 -40" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 50 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 50 -40" to="50 360 -40" dur="75000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-50 50 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 50 -40" to="-50 360 -40" dur="80000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="369 -30 -400" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 -30 -40" to="50 360 -40" dur="85000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-500 -30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 -30 -40" to="-50 360 -40" dur="90000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="650 70 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="40 70 -40" to="40 360 -40" dur="95000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 30 -40" to="30 360 -40" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-650 289 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 30 -40" to="-30 360 -40" dur="15000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="769 -20 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 -20 -40" to="30 360 -40" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-30 -20 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 -20 -40" to="-30 360 -40" dur="25000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 4 -50" rotation="50 16 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 4 -50" to="50 360 -50" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="2000 13 -54" rotation="30 -18 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="51 13 -54" to="51 360 -54" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="345 13 -54" rotation="30 -18 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="51 13 -54" to="51 360 -54" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-100 14 -46" rotation="-30 243 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-25 14 -46" to="-25 360 -46" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <a-entity position="-135 -76 90" rotation="10 8.1 -7" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-40 8.1 -50" to="-40 360 -50" dur="15000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-455 87 98" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 4.019 -50" to="-30 360 -50" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-100 60 70" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-70 4.019 -50" to="-70 360 -50" dur="25000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-40 98 0" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="75 4.019 -50" to="75 360 -50" dur="30000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 -15 -50" rotation="70 -150 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 15 -50" to="30 360 -50" dur="35000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-20 -133 -50" rotation="45 115 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-20 30 -50" to="-20 360 -50" dur="40000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-10 -98 -50" rotation="60 30 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-10 3 -50" to="-10 360 -50" dur="45000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="0 76 -50" rotation="15 30 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="0 3 -50" to="0 360 -50" dur="50000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="10 3 -50" rotation="45 50 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="10 3 -50" to="10 360 -50" dur="55000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="20 10 -50" rotation="70 105 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="20 10 -50" to="20 360 -50" dur="60000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 -2 -50" rotation="90 145 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 -2 -50" to="30 360 -50" dur="65000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-1 150 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-1 3 -40" to="-1 360 -40" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 -98 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 50 -40" to="50 360 -40" dur="75000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-50 50 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 50 -40" to="-50 360 -40" dur="80000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 -54 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 -30 -40" to="50 360 -40" dur="85000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-50 -30 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-50 -30 -40" to="-50 360 -40" dur="90000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="40 70 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="40 70 -40" to="40 360 -40" dur="95000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="30 54 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 30 -40" to="30 360 -40" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-30 -89 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 30 -40" to="-30 360 -40" dur="15000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-155 -20 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="30 -20 -40" to="30 360 -40" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-30 -26 -40" rotation="90 8.1 0" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-30 -20 -40" to="-30 360 -40" dur="25000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="50 4 -50" rotation="50 16 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="50 4 -50" to="50 360 -50" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="59 13 -54" rotation="30 -18 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="51 13 -54" to="51 360 -54" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="51 13 -54" rotation="30 -18 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="51 13 -54" to="51 360 -54" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            <a-entity position="-25 14 -46" rotation="-30 243 -40" obj-model="obj: #bottle; mtl: #bottleMaterial">
+                <a-animation attribute="rotation" from="-25 14 -46" to="-25 360 -46" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+        </a-scene>
+        
+        
+        <div id="quiz" style="display:none">
+            <h1 id="title">How Savvy Are You At Saving The Environment??</h1>
+            <table style="width:100%">
+                
+              <tr>
+            <th><form class="trashIslandQuiz">
+            Question 1: What kinds of marine animals does water pollution affect?<br>
+              <input type="radio" name="question1" value="0"> Fish<br>
+              <input type="radio" name="question1" value="0"> Whales<br>
+              <input type="radio" name="question1" value="0"> Plankton<br>
+              <input type="radio" name="question1" value="10"> All Of Them
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 2: How big is the biggest Garbage Patch in the world?<br>
+              <input type="radio" name="question2" value="0"> As big as California<br>
+              <input type="radio" name="question2" value="0"> 1 Million Square Meters<br>
+              <input type="radio" name="question2" value="10"> Twice the size of Texas<br>
+              <input type="radio" name="question2" value="0"> 4 Times the size of France
+            </th>
+            
+            <br><br><br>
+            
+            <th>
+            Question 3: How far down can the trash sink?<br>
+              <input type="radio" name="question3" value="0">As far as the item can go<br>
+              <input type="radio" name="question3" value="0">It floats on the surface<br>
+              <input type="radio" name="question3" value="10">It sinks to the ocean floor<br>
+              <input type="radio" name="question3" value="0"> To 70% ocean depth
+             </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 4: Why do the debris accumulate?<br>
+              <input type="radio" name="question4" value="10"> Dumped into ocean, escapes from landfill<br>
+              <input type="radio" name="question4" value="0"> Escapes from landfill, flies in the wind<br>
+              <input type="radio" name="question4" value="0"> Flies in the wind, dumped into ocean<br>
+              <input type="radio" name="question4" value="0"> Dumped into the ocean and fragmented
+             </th>
+            </tr>
+            
+            <br><br><br>
+            
+            <tr><th>
+                
+            Question 5: How can this disaster affect us?<br>
+              <input type="radio" name="question5" value="10"> Health<br>
+              <input type="radio" name="question5" value="0"> Significantly less food sources<br>
+              <input type="radio" name="question5" value="0"> Some species are becoming endagered<br>
+              <input type="radio" name="question5" value="0"> All of the above
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 6: How concerning is this issue?<br>
+              <input type="radio" name="question6" value="0"> Mild<br>
+              <input type="radio" name="question6" value="0"> Moderate<br>
+              <input type="radio" name="question6" value="0"> Pressing<br>
+              <input type="radio" name="question6" value="10"> Critical
+            </th>
+            
+            <br><br><br>
+            
+            <th>
+            Question 7: What type of waste is most common?<br>
+              <input type="radio" name="question7" value="0"> Metal<br>
+              <input type="radio" name="question7" value="0"> Paper<br>
+              <input type="radio" name="question7" value="0"> Oil/Chemicals<br>
+              <input type="radio" name="question7" value="10"> Plastic
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 8: How much of the earth is this affecting?<br>
+              <input type="radio" name="question8" value="0"> 50%<br>
+              <input type="radio" name="question8" value="0"> 75%<br>
+              <input type="radio" name="question8" value="10">70%<br>
+              <input type="radio" name="question8" value="0"> 20%
+            </form></th> </tr>
+        </table>
+        <input id="wrapper" type="submit" onclick="showResults()">
+        </div>
+        
+        
+        
+        <div id="results" style="display:none; background-color: rgb(168, 175, 171);">
+        </div>
+        <div id="answers" style="display:none; background-color: rgb(168, 175, 171);">
+            Answers: A | C | C | A | A | D | D | C
+        </div>
+        
+        <div id="facts" style="display:none">
+            <img style="height: 400px; width: 100%;" src="https://media.giphy.com/media/l2QDRzA1k66mR9UKQ/giphy.gif">
+            <!--Did You Know? <br> The Great Pacific Garbage Patch contains almost 3.5 million tons of trash in the form of light bulbs, bottle caps, Popsicle sticks, bottles, cans, fishing gear, polystyrene cups, shoes, toys, and even toothbrushes. Plastic constitutes around 85% of the garbage floating in this great garbage patch.<br><br>-->
+            <!--Despite being discovered in 1997, the great Pacific garbage patch has been notoriously under-reported by the media. Much of the younger generation isn't even aware that the Pacific ocean has been carrying the world's biggest landfill for years.-->
+            <img src="img/images/garbage_patch.jpg">
+        </div>
+        <script>
+            
+function myFunction() {
+    document.getElementById("trashIslandVr").style.display = "none"
+    document.getElementById("button").style.display="none"
+    document.getElementById("header").style.display="none"
+    document.getElementById("quiz").style.display = "block"}
+
+
+function showResults(){
+    document.getElementById("trashIslandQuiz")
+    var question1answer = parseInt(document.querySelector('input[name = "question1"]:checked').value)
+    var question2answer = parseInt(document.querySelector('input[name = "question2"]:checked').value)
+    var question3answer = parseInt(document.querySelector('input[name = "question3"]:checked').value)
+    var question4answer = parseInt(document.querySelector('input[name = "question4"]:checked').value)
+    var question5answer = parseInt(document.querySelector('input[name = "question5"]:checked').value)
+    var question6answer = parseInt(document.querySelector('input[name = "question6"]:checked').value)
+    var question7answer = parseInt(document.querySelector('input[name = "question7"]:checked').value)
+	var question8answer = parseInt(document.querySelector('input[name = "question8"]:checked').value)  
+	
+	var answer = question1answer + question2answer + question3answer + question4answer + question5answer + question6answer + question7answer + question8answer
+    answer = Math.round(answer)
+    
+    document.getElementById("results").style.display="block"
+
+    if (answer === 80){
+      document.getElementById("results").innerHTML = "Congratulations!! You scored a 100%! You made are now an educated environmental steward! Keep taking care of our earth!"
+      document.getElementById("facts").style.display="block"
+    }
+    else {
+        document.getElementById("results").innerHTML = "You scored a "+ answer + "%! Keep trying to become a better environmental steward!!"
+        document.getElementById("answers").style.display = "block" 
+        document.getElementById("facts").style.display="block"
+        
+    }
+
+}
+
+
+        </script>
+        
+        
+    </body>
+</html>
+
+
+

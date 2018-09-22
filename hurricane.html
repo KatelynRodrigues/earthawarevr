@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <script src = "https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            
+            <a-assets>
+                
+                <img src = "img/images/hurricane.jpg" id = "360photo">
+            </a-assets>
+            <a-sky src = "#360photo"></a-sky>
+            <a-entity camera look-controls position = "0 1.6 0">
+            <!--add the camera-->
+            <a-cursor color="white"></a-cursor>
+            </a-entity>
+            <!--add events: click, fusing, mousedown,mouseenter, mouseleave, mouseup-->
+            <!--make a box disappear when you click on it-->
+            <a-box color="red" position="2 1 -4">
+            	<a-animation attribute = "visible" to = "false" begin="click"></a-animation>
+            </a-box>
+        </a-scene>
+    </body>
+</html>

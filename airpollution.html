@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="icon" href="img/images/EarthAwareLogo.png" type="image/gif" sizes="16x16">
+        <script src = "https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <link rel="stylesheet" href="assets/css/trashisland.css">
+    
+    <body>
+        <div class="wrapper">
+            <left id="header" style = "font-family:'FontAwesome'">EXPLORE LIFE WHERE YOUR AIR LOOKS MURKY AND THICK LIKE SMOG!
+        <button align="center" id="button" onclick="myFunction()" style = "font-family:'FontAwesome'"> Click Here to Start the Quiz!</button>
+        </div>
+        <a-scene id = "trashIslandVr">
+            
+            <a-assets>
+                
+                <img src = "img/images/smog.jpg" id = "360photo">
+                
+            <!--    <a-asset-item id="bottle" src="img/images/Bottle A.obj"></a-asset-item>-->
+            <!--    <a-asset-item id="bottleMaterial" src="img/images/Bottle A.mtl"></a-asset-item>-->
+            </a-assets>
+            <a-sky src = "#360photo"></a-sky>
+            <a-entity camera look-controls position = "0 1.6 0">
+            <!--add the camera-->
+            <a-cursor color="white"></a-cursor>
+            </a-entity>
+            <!--add events: click, fusing, mousedown,mouseenter, mouseleave, mouseup-->
+            <!--make a box disappear when you click on it-->
+            <a-box color="red" position="2 1 -4">
+            	<a-animation attribute = "visible" to = "false" begin="click"></a-animation>
+            </a-box>
+            <!--<a-obj-model src = "#bottle" mtl = "#bottleMaterial"></a-obj-model>-->
+            <!--<a-entity position = "1 1.6 1">-->
+            <!--</a-entity>-->
+        </a-scene>
+        <div id="quiz" style="display:none">
+            <h1 id="title">What Do You Know About Air Pollution??</h1>
+            <table style="width:100%">
+                
+              <tr>
+            <th><form class="trashIslandQuiz">
+            Question 1: Can air pollution affect fish and other sea creatures??<br>
+              <input type="radio" name="question1" value="10"> Yes, in the form of acid rain<br>
+              <input type="radio" name="question1" value="0"> Yes, fish breathe air<br>
+              <input type="radio" name="question1" value="0"> No, air pollution can only affect mammals<br>
+              <input type="radio" name="question1" value="0"> No, air pollution isn't real
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 2: How many deaths were accounted for by air pollution in 2012?<br>
+              <input type="radio" name="question2" value="0"> 1.2 million<br>
+              <input type="radio" name="question2" value="0"> 3.3 million<br>
+              <input type="radio" name="question2" value="10"> 6.5 million<br>
+              <input type="radio" name="question2" value="0"> 400,000
+            </th>
+            
+            <br><br><br>
+            
+            <th>
+            Question 3: What is the deadliest form of pollution?<br>
+              <input type="radio" name="question3" value="0">Cultural Eutrification<br>
+              <input type="radio" name="question3" value="0">Salinization<br>
+              <input type="radio" name="question3" value="0">Water pollution<br>
+              <input type="radio" name="question3" value="10"> Air pollution
+             </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 4: What percent of the world population live in areas with air pollution over safe limits?<br>
+              <input type="radio" name="question4" value="10"> 92%<br>
+              <input type="radio" name="question4" value="0"> 36%<br>
+              <input type="radio" name="question4" value="0"> 100%<br>
+              <input type="radio" name="question4" value="0"> 74%
+             </th>
+            </tr>
+            
+            <br><br><br>
+            
+            <tr><th>
+                
+            Question 5: How much is the global economy affected by deaths due to pollution?<br>
+              <input type="radio" name="question5" value="0"> gain of $225 billion<br>
+              <input type="radio" name="question5" value="0"> gain of $100 million<br>
+              <input type="radio" name="question5" value="10"> loss of $225 billion<br>
+              <input type="radio" name="question5" value="0"> loss of $100 million
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 6: Can plants filter air pollution?<br>
+              <input type="radio" name="question6" value="0">Yes, all can<br>
+              <input type="radio" name="question6" value="10"> Yes, come can<br>
+              <input type="radio" name="question6" value="0"> No, plants produce pollution<br>
+              <input type="radio" name="question6" value="0"> No, it kills all of them
+            </th>
+            
+            <br><br><br>
+            
+            <th>
+            Question 7: How many pounds of C02 are released per second?<br>
+              <input type="radio" name="question7" value="0"> 900,000<br>
+              <input type="radio" name="question7" value="0"> 450,000<br>
+              <input type="radio" name="question7" value="0"> 7 billion<br>
+              <input type="radio" name="question7" value="10"> 2.4 million
+            </th>
+            
+             <br><br><br>
+             
+            <th>
+            Question 8: Which of the following is an effect of air pollution?<br>
+              <input type="radio" name="question8" value="0"> disease<br>
+              <input type="radio" name="question8" value="0">death<br>
+              <input type="radio" name="question8" value="0">aging<br>
+              <input type="radio" name="question8" value="10"> all of the above
+            </form></th> </tr>
+        </table>
+        <input id="wrapper" type="submit" onclick="showResults()">
+        </div>
+        
+        
+        
+        <div id="results" style="display:none; background-color: rgb(168, 175, 171);">
+        </div>
+        <div id="answers" style="display:none; background-color: rgb(168, 175, 171);">
+            Answers: A | C | D | A | C | B | D | D
+        </div>
+        
+        <div id="facts" style="display:none">
+            <!--<img style="height: 400px; width: 100%;" src="https://media.giphy.com/media/l2QDRzA1k66mR9UKQ/giphy.gif">-->
+            Did You Know? <br> Reaserch has shown that diesel cars have been producing almost 12 times the emsission has stated by their lab studies.<br><br>
+            <img style="height: 400px; width: 100%;" src="img/images/airmeme.jpg">
+        </div>
+        
+        <script>
+            
+function myFunction() {
+    document.getElementById("trashIslandVr").style.display = "none"
+    document.getElementById("button").style.display="none"
+    document.getElementById("header").style.display="none"
+    document.getElementById("quiz").style.display = "block"}
+
+
+function showResults(){
+    document.getElementById("trashIslandQuiz")
+    var question1answer = parseInt(document.querySelector('input[name = "question1"]:checked').value)
+    var question2answer = parseInt(document.querySelector('input[name = "question2"]:checked').value)
+    var question3answer = parseInt(document.querySelector('input[name = "question3"]:checked').value)
+    var question4answer = parseInt(document.querySelector('input[name = "question4"]:checked').value)
+    var question5answer = parseInt(document.querySelector('input[name = "question5"]:checked').value)
+    var question6answer = parseInt(document.querySelector('input[name = "question6"]:checked').value)
+    var question7answer = parseInt(document.querySelector('input[name = "question7"]:checked').value)
+	var question8answer = parseInt(document.querySelector('input[name = "question8"]:checked').value)  
+	
+	var answer = question1answer + question2answer + question3answer + question4answer + question5answer + question6answer + question7answer + question8answer
+    answer = Math.round(answer)
+    
+    document.getElementById("results").style.display="block"
+
+    if (answer === 80){
+      document.getElementById("results").innerHTML = "Congratulations!! You scored a 100%! You made are now an educated environmental steward! Keep taking care of our earth!"
+      document.getElementById("facts").style.display="block"
+    }
+    else {
+        document.getElementById("results").innerHTML = "You scored a "+ answer + "%! Keep trying to become a better environmental steward!!"
+        document.getElementById("answers").style.display = "block" 
+        document.getElementById("facts").style.display="block"
+        
+    }
+
+}
+
+
+        </script>
+
+    </body>
+</html>
